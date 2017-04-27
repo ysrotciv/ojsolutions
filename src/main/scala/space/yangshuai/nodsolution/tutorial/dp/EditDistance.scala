@@ -1,4 +1,4 @@
-package space.yangshuai.nodsolution.tutorial.greedy
+package space.yangshuai.nodsolution.tutorial.dp
 
 /**
   * Created on 2017/4/18.
