@@ -1,4 +1,4 @@
-package space.yangshuai.nodsolution.challenge.largenumber
+package space.yangshuai.nodsolution.challenge.numbertheory.largenumber
 
 /**
   * Created by rotciv on 2017/3/7.

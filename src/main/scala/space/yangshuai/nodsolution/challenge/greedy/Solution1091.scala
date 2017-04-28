@@ -1,5 +1,7 @@
 package space.yangshuai.nodsolution.challenge.greedy
 
+import scala.collection.mutable
+
 /**
   * Created by rotciv on 2017/4/25.
   */
@@ -9,36 +11,56 @@ object Solution1091 {
 
     val n = scala.io.StdIn.readLine().toInt
     var lines = new Array[Line](n)
+    val list = mutable.ListBuffer[Line]()
     var max = 0
 
     for (i <- 0 until n) {
       val arr = scala.io.StdIn.readLine().split(" ").map(_.toInt)
-      val newLine = Line(arr(0), arr(1))
+      val newLine = Line(arr(0), arr(1), arr(1) - arr(0))
       lines(i) = newLine
     }
 
     lines = lines.sortWith(compare)
+    list.append(lines(0))
+
+    var times = 0
+    var currentEnd = 0
 
     for (i <- 1 until n) {
-      var index = i - 1
-      while (index >= 0 && lines(i).start < lines(index).end) {
-        val value = diff(lines(i), lines(index))
-        if (value > max) {
-          max = value
+      val currentLine = lines(i)
+      if (currentLine.end == currentEnd) {
+        times += 1
+      } else {
+        currentEnd = currentLine.end
+        times = 0
+      }
+      if (times < 2) {
+        for (line <- list) {
+          val value = diff(line, currentLine)
+          if (value > max) {
+            max = value
+          }
         }
-        index -= 1
+        addList(list, currentLine)
       }
     }
 
     println(max)
   }
 
+  private def addList(list: mutable.ListBuffer[Line], line: Line): Unit = {
+    val newList = list.dropWhile(l => l.end <= line.end && l.length <= line.length)
+    if (newList.size < list.size) {
+      list.append(line)
+    }
+  }
+
   private def compare(a: Line, b: Line): Boolean = {
-    if (a.start > b.start) {
+    if (a.end < b.end) {
       true
-    } else if (a.start < b.start) {
-      false
     } else if (a.end > b.end) {
+      false
+    } else if (a.start < b.start) {
       true
     } else {
       false
@@ -70,6 +92,5 @@ object Solution1091 {
     }
   }
 
-  case class Line(start: Int, end: Int)
-
+  case class Line(start: Int, end: Int, length: Int)
 }
