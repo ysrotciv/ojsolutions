@@ -1,7 +1,5 @@
 package space.yangshuai.nodsolution.challenge.numbertheory.largenumber
 
-import scala.collection.mutable.ListBuffer
-
 /**
   * Created on 2017/4/28.
   *
@@ -9,9 +7,14 @@ import scala.collection.mutable.ListBuffer
   */
 object Solution1027 {
 
+  var arr: Array[Int] = _
+
   def main(args: Array[String]): Unit = {
-    var a = scala.io.StdIn.readLine()
-    var b = scala.io.StdIn.readLine()
+
+    var a = scala.io.StdIn.readLine().toCharArray
+    var b = scala.io.StdIn.readLine().toCharArray
+
+    arr = new Array[Int](a.length + b.length)
 
     if (a.length < b.length) {
       val temp = a
@@ -19,21 +22,24 @@ object Solution1027 {
       b = temp
     }
 
-    println(multi(a, b))
+    multi(a.reverse, b.reverse)
+
+    println(arr.reverse.dropWhile(_ == 0).mkString(""))
   }
 
-  private def multi(a: String, b: String): String = {
-    var sum = "0"
-    var zeroes = 0
-    for (c <- b.toCharArray.reverse) {
-      var temp = bitMulti(a, c - '0')
-      for (_ <- 0 until zeroes) {
-        temp += "0"
+  private def multi(a: Array[Char], b: Array[Char]): Unit = {
+
+    for (i <- b.indices) {
+      val multiplied = b(i) - '0'
+      var temp = 0
+      for (j <- a.indices) {
+        val multiplier = a(j) - '0'
+        val value = multiplier * multiplied + temp + arr(i + j)
+        arr(i + j) = value % 10
+        temp = value / 10
       }
-      sum = add(sum, temp)
-      zeroes += 1
+      arr(i + a.length) = temp
     }
-    sum
   }
 
   private def bitMulti(a: String, b: Int): String = {
