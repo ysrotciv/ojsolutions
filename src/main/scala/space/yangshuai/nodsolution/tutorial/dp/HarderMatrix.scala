@@ -1,7 +1,8 @@
 package space.yangshuai.nodsolution.tutorial.dp
 
 /**
-  * Created by rotciv on 2017/4/22.
+  * Created by yang
+  * Created on 22/04/2017.
   */
 object HarderMatrix {
 
