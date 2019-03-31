@@ -1,4 +1,4 @@
-package space.yangshuai.leetcode.Common;
+package space.yangshuai.leetcode.common;
 
 import java.util.ArrayList;
 import java.util.List;

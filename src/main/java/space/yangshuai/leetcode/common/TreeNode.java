@@ -1,4 +1,4 @@
-package space.yangshuai.leetcode.Common;
+package space.yangshuai.leetcode.common;
 
 /**
  * Created by shuai.yang on 2015/1/15.

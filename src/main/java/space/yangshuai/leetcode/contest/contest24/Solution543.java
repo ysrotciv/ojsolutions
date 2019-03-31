@@ -1,6 +1,6 @@
 package space.yangshuai.leetcode.contest.contest24;
 
-import Common.TreeNode;
+import space.yangshuai.leetcode.common.TreeNode;
 
 /**
  * Created by rotciv on 2017/3/19.

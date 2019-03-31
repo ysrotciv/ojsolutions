@@ -1,6 +1,6 @@
 package space.yangshuai.leetcode.easy;
 
-import Common.ListNode;
+import space.yangshuai.leetcode.common.ListNode;
 
 /**
  * Created by Administrator on 2015/12/20.

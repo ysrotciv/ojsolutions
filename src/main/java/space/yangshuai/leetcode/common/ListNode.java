@@ -1,4 +1,4 @@
-package space.yangshuai.leetcode.Common;
+package space.yangshuai.leetcode.common;
 
 /**
  * Definition for singly-linked list.

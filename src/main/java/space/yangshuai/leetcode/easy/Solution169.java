@@ -1,9 +1,5 @@
 package space.yangshuai.leetcode.easy;
 
-import medium.Solution229;
-
-import java.util.HashMap;
-
 /**
  * Created by Administrator on 2015/12/20.
  */

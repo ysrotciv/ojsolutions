@@ -1,6 +1,6 @@
 package space.yangshuai.leetcode.medium;
 
-import Common.NestedInteger;
+import space.yangshuai.leetcode.common.NestedInteger;
 
 /**
  * Created by rotciv on 2017/3/2.

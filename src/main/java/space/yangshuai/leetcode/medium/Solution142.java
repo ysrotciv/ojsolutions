@@ -1,6 +1,6 @@
 package space.yangshuai.leetcode.medium;
 
-import Common.ListNode;
+import space.yangshuai.leetcode.common.ListNode;
 
 /**
  * Created by rotciv on 2017/1/6.

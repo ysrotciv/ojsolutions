@@ -1,6 +1,7 @@
 package space.yangshuai.leetcode.contest.contest23;
 
-import Common.TreeNode;
+
+import space.yangshuai.leetcode.common.TreeNode;
 
 import java.util.Stack;
 

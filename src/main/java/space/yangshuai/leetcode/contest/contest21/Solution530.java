@@ -1,7 +1,8 @@
 package space.yangshuai.leetcode.contest.contest21;
 
 
-import Common.TreeNode;
+
+import space.yangshuai.leetcode.common.TreeNode;
 
 import java.util.*;
 
