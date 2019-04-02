@@ -1,4 +1,4 @@
-package space.yangshuai.ojsolutions.leetcode.medium;
+package space.yangshuai.leetcode.medium;
 
 import space.yangshuai.ojsolutions.leetcode.common.ListNode;
 

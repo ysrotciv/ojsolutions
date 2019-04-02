@@ -1,4 +1,4 @@
-package space.yangshuai.ojsolutions.leetcode.contest.contest29;
+package space.yangshuai.leetcode.contest.contest29;
 
 import space.yangshuai.ojsolutions.leetcode.common.TreeNode;
 

@@ -1,4 +1,4 @@
-package space.yangshuai.ojsolutions.leetcode.contest.contest21;
+package space.yangshuai.leetcode.contest.contest21;
 
 
 

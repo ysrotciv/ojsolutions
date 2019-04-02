@@ -1,4 +1,4 @@
-package space.yangshuai.ojsolutions.leetcode.easy;
+package space.yangshuai.leetcode.easy;
 
 /**
  * Created by Administrator on 2015/12/20.
