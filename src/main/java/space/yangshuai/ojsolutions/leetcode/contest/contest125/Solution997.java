@@ -1,4 +1,4 @@
-package space.yangshuai.leetcode.contest.contest125;
+package space.yangshuai.ojsolutions.leetcode.contest.contest125;
 
 public class Solution997 {
 

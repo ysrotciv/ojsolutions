@@ -1,4 +1,4 @@
-package space.yangshuai.leetcode.contest.contest129;
+package space.yangshuai.ojsolutions.leetcode.contest.contest129;
 
 import java.util.Arrays;
 
