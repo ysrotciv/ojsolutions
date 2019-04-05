@@ -1,9 +1,9 @@
-package space.yangshuai.ojsolutions.leetcode.lessons.array;
+package space.yangshuai.ojsolutions.leetcode.lessons.array.initialdefinition;
 
 /**
  * @author yangshuai on 2019-04-02.
  */
-public class RemoveDuplication {
+public class RemoveDuplicates {
 
     public int removeDuplicates(int[] nums) {
 
