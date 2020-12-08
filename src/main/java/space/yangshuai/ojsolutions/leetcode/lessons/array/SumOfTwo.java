@@ -1,24 +1,21 @@
 package space.yangshuai.ojsolutions.leetcode.lessons.array;
 
-import java.util.Arrays;
+import java.util.HashMap;
 
 public class SumOfTwo {
 
     public int[] twoSum(int[] nums, int target) {
 
-        Arrays.sort(nums);
-        int head = 0;
-        int tail = nums.length - 1;
-        int sum = nums[head] + nums[tail];
-        while (sum != target) {
-            if (sum > target) {
-                tail--;
+        HashMap<Integer, Integer> map = new HashMap<>(nums.length << 1);
+
+        for (int i = 0; i < nums.length; ++i) {
+            if (map.containsKey(target - nums[i])) {
+                return new int[]{map.get(target - nums[i]), i};
             } else {
-                head++;
+                map.put(nums[i], i);
             }
         }
-
-        return new int[]{head, tail};
+        return null;
     }
 
 }
