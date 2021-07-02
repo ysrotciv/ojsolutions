@@ -1,7 +1,5 @@
 package space.yangshuai.ojsolutions.leetcode.lessons.array;
 
-import java.util.Arrays;
-
 /**
  * @author yangshuai on 2019-04-02.
  */
@@ -18,9 +16,7 @@ public class RotateArray {
         int[] temp = new int[k];
         System.arraycopy(nums, nums.length - k, temp, 0, k);
 
-        for (int i = nums.length - 1; i >= k; i--) {
-            nums[i] = nums[i - k];
-        }
+        if (nums.length - k >= 0) System.arraycopy(nums, 0, nums, k, nums.length - k);
 
         System.arraycopy(temp, 0, nums, 0, k);
     }
