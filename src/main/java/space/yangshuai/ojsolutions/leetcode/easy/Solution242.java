@@ -5,8 +5,6 @@ package space.yangshuai.ojsolutions.leetcode.easy;
  */
 public class Solution242 {
 
-    static int MIN = 97;
-
     public boolean isAnagram(String s, String t) {
 
         if (s.length() != t.length())
@@ -16,8 +14,8 @@ public class Solution242 {
         int[] b = new int[26];
 
         for (int i = 0; i < s.length(); i++) {
-            a[Integer.valueOf(s.charAt(i)) - MIN]++;
-            b[Integer.valueOf(t.charAt(i)) - MIN]++;
+            a[s.charAt(i) - 'a']++;
+            b[t.charAt(i) - 'a']++;
         }
 
         for (int i = 0; i < a.length; i++) {

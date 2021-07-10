@@ -7,32 +7,28 @@ import java.util.Stack;
  */
 public class Solution232 {
 
-    Stack stack = new Stack();
-
-    Stack stackR = new Stack();
+    Stack<Integer> stack = new Stack<>();
+    Stack<Integer> stackR = new Stack<>();
 
     // Push element x to the back of queue.
     public void push(int x) {
         if (stack.size() < stackR.size())
             convert();
-
         stack.push(x);
     }
 
     // Removes the element from in front of queue.
-    public void pop() {
+    public int pop() {
         if (stackR.size() < stack.size())
             convert();
-
-        stackR.pop();
+        return stackR.pop();
     }
 
     // Get the front element.
     public int peek() {
         if (stackR.size() < stack.size())
             convert();
-
-        return (int) stackR.peek();
+        return stackR.peek();
     }
 
     // Return whether the queue is empty.

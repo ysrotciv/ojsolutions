@@ -12,23 +12,23 @@ public class Solution383 {
         if (ransomNote.length() == 0) return true;
         if (magazine.length() == 0) return false;
 
-        char[] ransom = ransomNote.toCharArray();
-        char[] maga = magazine.toCharArray();
-        Arrays.sort(ransom);
-        Arrays.sort(maga);
+        int[] ransomArr = new int[26];
+        int[] magazineArr = new int[26];
 
-        int i = 0, j = 0;
-        while (true) {
-            if (ransom[i] == maga[j]) {
-                i++;
-                j++;
-            } else {
-                j++;
-            }
-            if (i == ransom.length) return true;
-            if (j == maga.length) return false;
-
+        for (char c : ransomNote.toCharArray()) {
+            ransomArr[c - 'a']++;
         }
+        for (char c : magazine.toCharArray()) {
+            magazineArr[c - 'a']++;
+        }
+
+        for (int i = 0; i < 26; i++) {
+            if (ransomArr[i] > magazineArr[i]) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
 }

@@ -1,4 +1,4 @@
-package space.yangshuai.leetcode.easy;
+package space.yangshuai.ojsolutions.leetcode.easy;
 
 import space.yangshuai.ojsolutions.leetcode.common.ListNode;
 
@@ -15,46 +15,34 @@ public class Solution21 {
         if (l2 == null)
             return l1;
 
-        ListNode temp;
+        ListNode root, side, main, temp;
 
-        ListNode newNode = null;
         if (l1.val < l2.val) {
-            temp = l1;
-            newNode = l1;
-            l1 = l1.next;
+            root = main = l1;
+            side = l2;
         } else {
-            temp = l2;
-            newNode = l2;
-            l2 = l2.next;
+            root = main = l2;
+            side = l1;
         }
 
 
         while (true) {
 
-            if (l1 == null && l2 == null)
-                break;
+           if (main.next == null) {
+               main.next = side;
+               break;
+           }
 
-            if (l2 == null) {
-                newNode = addNewNode(newNode, l1.val);
-                l1 = l1.next;
-            } else if (l1 == null) {
-                newNode = addNewNode(newNode, l2.val);
-                l2 = l2.next;
-            } else if (l1.val < l2.val) {
-                newNode = addNewNode(newNode, l1.val);
-                l1 = l1.next;
-            } else {
-                newNode = addNewNode(newNode, l2.val);
-                l2 = l2.next;
-            }
+            if (main.next.val > side.val) {
+               temp = main.next;
+               main.next = side;
+               side = temp;
+           } else {
+               main = main.next;
+           }
         }
 
-        return temp;
+        return root;
     }
 
-    private ListNode addNewNode(ListNode pre, int val) {
-        ListNode node = new ListNode(val);
-        pre.next = node;
-        return node;
-    }
 }
