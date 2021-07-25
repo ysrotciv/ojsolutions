@@ -11,8 +11,4 @@ public class Solution746 {
         return Math.min(arr[cost.length - 1], arr[cost.length - 2]);
     }
 
-    public static void main(String[] args) {
-        new Solution746().minCostClimbingStairs(new int[]{10, 15, 20});
-    }
-
 }
